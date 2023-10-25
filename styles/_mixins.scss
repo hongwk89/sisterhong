@@ -1,0 +1,110 @@
+@use 'sass:math';
+
+@mixin margin($width, $thick, $angle, $direction) {
+    $gap: math.div($thick, 2) * math.sin(90 - $angle);
+    $xDis: math.div(($width * math.sin($angle)), 2) - $gap;
+
+    @if ($direction == up) {
+        &:before {
+            margin-left: $xDis;
+            @if ($angle < 45) {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, $thick 100%);
+            }
+        }
+        &:after {
+            margin-left: -$xDis;
+            @if ($angle < 45) {
+                clip-path: polygon(0 0, 100% 0, calc(100% - $thick) 100%, 0 100%);
+            }
+        }
+    } @else if($direction == down) {
+        &:before {
+            margin-left: -$xDis;
+            @if ($angle < 45) {
+                clip-path: polygon(0 0, calc(100% - $thick) 0, 100% 100%, 0 100%);
+            }
+        }
+        &:after {
+            margin-left: $xDis;
+            @if ($angle < 45) {
+                clip-path: polygon($thick 0, 100% 0, 100% 100%, 0 100%);
+            }
+        }
+    } @else if ($direction == right) {
+        &:before {
+            margin-top: -$xDis;
+            @if ($angle < 45) {
+                clip-path: polygon(0 0, 100% 0, calc(100% - $thick) 100%, 0 100%);
+            }
+        }
+        &:after {
+            margin-top: $xDis;
+            @if ($angle < 45) {
+                clip-path: polygon(0 0, calc(100% - $thick) 0, 100% 100%, 0 100%);
+            }
+        }
+    } @else {
+        &:before {
+            margin-top: $xDis;
+            @if ($angle < 45) {
+                clip-path: polygon($thick 0, 100% 0, 100% 100%, 0 100%);
+            }
+        }
+        &:after {
+            margin-top: -$xDis;
+            @if ($angle < 45) {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, $thick 100%);
+            }
+        }
+    }
+}
+
+// 화살표 (컴포넌트 안에서 사용)
+@mixin arrow($width: 1.5rem, $thick: 0.2rem, $angle: 45deg, $direction: left, $bg: #191919) {
+    $degree: $angle;
+    @if ($direction == up or $direction == down) {
+        $degree: 90 - $angle;
+    }
+
+    &:before,
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: $width;
+        height: $thick;
+        background: $bg;
+    }
+    &:before {
+        transform: translate(-50%, -50%) rotate($degree);
+    }
+    &:after {
+        transform: translate(-50%, -50%) rotate(-$degree);
+    }
+    @include margin($width, $thick, $angle, $direction);
+}
+
+@mixin closeBtn($width: 2rem, $height: 0.25rem, $bg: var(--main-color)) {
+    position: relative;
+    width: $width;
+    height: $width;
+    &:before,
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: $width;
+        height: $height;
+        background: $bg;
+    }
+    &:before {
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+    &:after {
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+}

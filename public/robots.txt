@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /repair
+Sitemap: https://sisterhong.kr/sitemap.xml

@@ -1,0 +1,137 @@
+/* Default */
+.mb-04 {
+    margin-bottom: 0.4rem;
+}
+.mb-1 {
+    margin-bottom: 1rem;
+}
+.mb-2 {
+    margin-bottom: 2rem;
+}
+.mb-4 {
+    margin-bottom: 4rem;
+}
+.mb-10 {
+    margin-bottom: 10rem;
+}
+.tc {
+    text-align: center !important;
+}
+.tl {
+    text-align: left !important;
+}
+
+/* Table */
+.table {
+    width:100%;
+    margin-bottom: 1rem;
+    background-color:transparent;
+    border:1px solid #dee2e6;
+    border-collapse: collapse;
+}
+
+.table thead th {
+    vertical-align: bottom;
+    border:1px solid #dee2e6;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.table td, .table th {
+    padding: 0.75rem;
+    border-top: 1px solid #dee2e6;
+}
+
+.table .thead_dark th {
+    color:#fff;
+    background-color:#212529;
+    border-color:#32383e;
+}
+
+/* Form */
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.form-control label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+.text-muted {
+    color: #6c757d!important;
+}
+
+.form-text {
+    display: block;
+    margin-top: 0.25rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+/* Form SelectBox */
+.form-select {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 2.25rem 0.375rem 0.75rem;
+    -moz-padding-start: calc(0.75rem - 3px);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 16px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* Botton */
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.btn_basic {
+    color: #000;
+    background-color:#fff;
+    border-color:#fff;
+}
+
+.btn_primary {
+    color:#fff;
+    background-color:#007bff;
+    border-color:#007bff;
+}
+
+.btn_danger {
+    color: #fff;
+    background-color:#ff0000;
+    border-color:#ff0000;
+}
